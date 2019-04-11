@@ -12,6 +12,9 @@ export class AppComponent {
   //Submits form and validation
   todoSubmit(value:any){
     if(value.length > 0){
+      if(!this.todoArray){
+        this.todoArray = [];
+      }
       this.todoArray.push(value);
       localStorage.setItem("todo", JSON.stringify(this.todoArray));
     }
